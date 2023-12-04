@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flash Cellular</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- font google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- CSS-->
+    <link rel="stylesheet" href="style.css (toko oo).css" />
+  </head>
+  <style>
+    body {
+	background: #fff;
+}
+.accordion .card {
+	background: none;
+	border: none;
+}
+.accordion .card .card-header {
+	background: none;
+	border: none;
+	padding: .4rem 1rem;
+	font-family: "Roboto", sans-serif;
+}
+.accordion .card-header h2 span {
+	float: left;
+	margin-top: 10px;
+}
+.accordion .card-header .btn {
+	color: #2f2f31;
+	font-size: 1.04rem;
+	text-align: left;
+	position: relative;
+	font-weight: 500;
+	padding-left: 2rem;
+}
+.accordion .card-header i {
+	font-size: 1.2rem;
+	font-weight: bold;
+	position: absolute;
+	left: 0;
+	top: 9px;
+}
+.accordion .card-header .btn:hover {
+	color: #ff8300;
+}
+.accordion .card-body {
+	color: #324353;
+	padding: 0.5rem 3rem;
+}
+.accordion .highlight .btn {
+	color: #74bd30;
+}
+.accordion .highlight i {
+	transform: rotate(180deg);
+}
+#product {
+        text-align: center;
+      }
+
+      .filter_buttons {
+        margin-bottom: 20px;
+      }
+
+      .tab-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .filter_buttons button {
+      background-color: #E9B824; /* Warna latar belakang normal */
+      color: white; /* Warna teks normal */
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .filter_buttons button.active {
+      background-color: #E9B824; /* Warna latar belakang saat tombol aktif */
+    }
+
+    .filter_buttons button:hover {
+      background-color: #47b2e4; /* Warna latar belakang saat tombol dihover */
+    }
+
+      .card-product {
+        width: 100%;
+      }
+    </style>
+    <script>
+    $(document).ready(function(){
+      // Add minus icon for collapse element which is open by default
+      $(".collapse.show").each(function(){
+        $(this).prev(".card-header").addClass("highlight");
+      });
+      
+      // Highlight open collapsed element 
+      $(".card-header .btn").click(function(){
+        $(".card-header").not($(this).parents()).removeClass("highlight");
+        $(this).parents(".card-header").toggleClass("highlight");
+      });
+    });
+    </script>
+    </head>
+  <body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #E9B824;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-charge-fill me-3" viewBox="0 0 16 16">
+            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" /></svg
+          >Flash Cellular</a
+        >
+        <button
+          class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="toggler-icon top-bar"></span>
+          <span class="toggler-icon middle-bar"></span>
+          <span class="toggler-icon bottom-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item mx-2">
+              <a class="nav-link" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#product">Product</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#testimoni">Testimoni</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home section-->
+    <section id="home" class="home">
+      <img src="assets/background4.jpg" />
+      <div class="content">
+        <h1>Flash Cellular</h1>
+        <p>
+          <b>
+            Kami menyediakan penjualan hp yang lengkap dengan segala jenis smartphone. Baik dari iPhone dan android beserta aksesoris HP, seperti: casing hp, charger hp, antigores, power bank, dll. Kami juga telah melakukan banyak transaksi
+            jual beli hp baru maupun second baik cod an ataupun kalian bisa datang ke toko kami, jadi kalian bisa percaya kami.
+          </b>
+        </p>
+        <a href="#product" class="">View More</a>
+      </div>
+
+      <div class="media-icons">
+        <a href="https://wa.me/+628567728168/?text=hello">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path
+              d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+            /></svg
+        ></a>
+        <a href="https://www.instagram.com/flashcellular/">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path
+              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+            /></svg
+        ></a>
+        <a href="#footer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" /></svg
+        ></a>
+      </div>
+    </section>
+
+    <!-- About section-->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header py-5 text-center">
+          <h2>About Us</h2>
+          <hr class="mx-auto mb-5 w-25 text-center" />
+          <h3 class="page-title text-center" style="text-align: center;">Jual atau Beli HP? Flash Cellular aja</h3>
+        </div>
+        
+        <div class="row gy-4">
+          <div class="col-md-6">
+            <img src="https://img.freepik.com/free-photo/side-view-woman-home-using-headphones-tablet_23-2148793514.jpg?size=626&ext=jpg&ga=GA1.1.1975215096.1695967878&semt=sph" class="img-fluid rounded-4 mb-4" alt="" />
+          </div>
+
+          <div class="col-md-6">
+          <p class="fs-5">Kami hadir untuk menyediakan smartphone kebutuhan kalian baik iPhone ataupun android.</p>
+            <p class="fs-5">Jika kalian ingin menjual smartphone juga kami menyediakan penjualan segala jenis smartphone, tapi dengan syarat hanya smartphone garansi resmi ya untuk menghindari hal-hal yang tidak kita bersama inginkan.</p>
+          </div>
+
+          <div class="col-md-6">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic fs-5">Apa saja yang kami jual?</p>
+              
+                <li><i class="bi bi-check-circle-fill fs-5"></i> iPhone second</li>
+                <li><i class="bi bi-check-circle-fill fs-5"></i> Android baru atau second</li>
+                <li><i class="bi bi-check-circle-fill fs-5"></i> Accessories HP</li>
+              
+              <p class="fs-5">Semua yang kami jual baik dari smartphone hingga accessoriesnya kami jual juga dengan garnasi resmi dari perusahaan merk distributornya ya.</p>
+            </div>
+          </div>
+          <div class="col-md-6 position-relative mt-4">
+            <img src="https://img.freepik.com/free-vector/new-smartphone-different-perspectives_23-2148799053.jpg?size=626&ext=jpg&ga=GA1.1.1975215096.1695967878&semt=sph" class="img-fluid rounded-4" alt="" />
+            <a href="https://youtu.be/qZ2sCvNPYFc?si=FR4viUoSNFVi4YIA" class="glightbox play-btn"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services section-->
+    <section id="services">
+      <div class="container-fluid py-5 text-center">
+        <h2>Our Services</h2>
+        <hr class="mx-auto mb-5 w-25 text-center" />
+        <div class="row mb-5">
+          <div class="col-12 col-sm-6 col-md-3 m-auto">
+            <!-- card starts here -->
+            <div class="card-service shadow">
+              <div class="card-body">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATtJREFUSEvt1c8qRVEUB+DvMmRAKZlSDIxNkbEHkJK8gJSZqQeQJyBKHkFGTIxMDRiYSUpSysyfdt1T1+Xcs9yzcyfO7NTe61u/dfbuNPToafTI9Q//2eRzjXoAm9jGR6T7HHA/TrGAYyxH8BzwBC4x1Ex6iNUqPAecvGmcYaSJVybPBSdvCucYjeA54eSN4yKCl8FpbN0+Y5hs2byLjfZiZXDoSgQ7e8ZwFK6TuNV4xz4OonAwTPfLch+ucCdl8BpW0Beu1HnhfHTULxjMhKYy3wKWJU5XYL0FvsF9jUbCiVNDR1hqYneYxW0N/MvWToerHX/AHK5z4FWnuh1/RBrbVV28Ci4Oxl7zV5fenzBTd+wRuMCLb36CRbzVSR2FC3wLO3itg/54v+oWjO7/TeJozdC6fzg0phyLPgFLDC4f99OyfQAAAABJRU5ErkJggg=="
+                />
+                <h3 class="text-center">Tukar tambah ke HP baru atau Second</h3>
+                <hr class="mx-auto w-75" />
+                <p>Kami juga melayani tukar tambah ya kakak!</p>
+              </div>
+            </div>
+            <!-- card ends here -->
+          </div>
+          <!-- col ends here -->
+          <div class="col-12 col-sm-6 col-md-3 m-auto">
+            <!-- card starts here -->
+            <div class="card-service shadow">
+              <div class="card-body">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAXRJREFUSEvt1r9LVlEcx/GX4Kbg6iRSkG4m4pZRQ2OCm4Tg/9AgKE6Co+i/ENLgEgRBS5CUm4I4BWKSe+DSmsSR88jj7V7v90TwODxnO+d8zud9vz+4fAf0aA30iOtfwIOYxkz+6CMc43dJECXgpF3FCkYqkEtsYCcKLwHvYqnFeBuvI/Ao+BXeZsOLbP4l759hC2N5/wKf2uBR8Hc8QErpI/ysGI/iDEM4wNz/AD/MpslrHZsNpul8DVe5B37dBY9E/ARfs8lLfGgwnMf7fDeL1O2NKwJONfycHZ5jv8Etqrt+XgUP4yTXs61MJffnmMJN+qvg1BSdbi0xjmifdpXsr4i70/UGPzCO5ezcOasD1em6z26VqRpxXZ2itSt6e6/Bkfo1aRqzFYm4Dy7JQD/VN7/bfnNF/1LRBrv/zTWJb9FwCnUTOO28qRsE3mGh0LRNvofFblEdOJ2lMeZxzaDQBqjep/nrEB+rF5HRpxQW0vcM/AcLDWsfXKwkoAAAAABJRU5ErkJggg=="
+                />
+                <h3 class="text-center">Jual & Beli HP baru atau Second</h3>
+                <hr class="mx-auto w-75" />
+                <p>Beli HP baru ataupun bekas via datang ke toko ataupun CoD, Bisa ya kakak!</p>
+              </div>
+            </div>
+            <!-- card ends here -->
+          </div>
+          <!-- col ends here -->
+          <div class="col-12 col-sm-6 col-md-3 m-auto">
+            <!-- card starts here -->
+            <div class="card-service shadow">
+              <div class="card-body">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAqtJREFUSEvFlsmrzlEYxz+XnRSZrlvqIlPJVbJALjZWVjaWEpIxc4ZuIWXIPCcZ8g+wsTaGLSJTWFDmWLAz9H17Tj3OPec3eBfv2by95/c8z+d8n/Oc85w2WjTaWsSlDngA8D2x0D7AZOAZ8LOqkKrghcB+YCrwzgXvAq4Ao4EfwBrgYhV4FfBi4LwFewII9guYBNwABkWgZcC5MngZWEovQWNL/gCLgMsGvQ4MNsBuUzvQ/q8FjhfBi8A56ATgFjDUAi8BLgATLQNDbF5pP5mD58BVoSuBMy74eOAOUApPgXPQMcBdpzSGBn4leAwugt4Ghlv0HNTDbwLtNrEZOOjT7sF9gceAVqyhatbRGAsIGoJsAI6UVa3FUS0MM9v1wNHgFyvuBO4DW6x6lV45d5jDRuBwBWgwGWeLFlxHUHv/TR9TexxuKF0KStcIi7LVLpEa3Iapim+5OSmbz3NgzY8ypQG6DdhXlwjsAeSr8QCYAvzOgUdaepqF7gWUJY03QDfwNrfHgt1z6d0F7PwPpTucn2DTPTSlWHs6y0BKbUhTHbZUSq2GoFIqxf8MX1zTTK0MTgOrItt51iBC0NRitFDta4BKxGugV0v1YF3wMtKvWp+cXrnoanv9gO1OkYevc+f7vaVXSpMtNT5OupFOWbSPwEzghf2/CswFFgDXIrm6VA7Z3AdLr/xyLTV5jjcBB1yQGZHyOMWxUu3pS1OaaqkN/1x3iuGz7WkTQ1dYPWj+E6BFlkKLwPrm4Z8t7XpXhRFDVRNPy5QG57IXyGrghBl7eFPQMsVhcX4Plc6zQI99/AJoG9TVci01dewqP2+98hDoKzAHeATkWmoSWlVxcF4KHLOzrPM9H3joIsctNQutC5Z9f3sYqNM0ukw0co/+XoZlxVW46mY+tgz8F836qh9LQFuQAAAAAElFTkSuQmCC"
+                />
+                <h3 class="text-center">CoD</h3>
+                <hr class="mx-auto w-75" />
+                <p>CoDan area Kota Cirebon. Janjian saja dengan kami, kami siap melakukan CoD sesuai tempat yang ditentukan.</p>
+              </div>
+            </div>
+            <!-- card ends here -->
+          </div>
+          <!-- col ends here -->
+          <div class="col-12 col-sm-6 col-md-3 m-auto">
+            <!-- card starts here -->
+            <div class="card-service shadow">
+              <div class="card-body">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAchJREFUSEvt1k+oTVEUx/HPKxkgRmYUZkphQimhDCQDMVCmlCeGFCb+RwyVUjIwIWXGQP4O6CXJyNSflDKW/CvvtbSO7r3ueXff0+m+yVt1Bru91/rutfZvr33GzJCNzRBXE/BirMcKzMcHvMS7YZIoBc/DvvxW1wAe4RRelGygBByge1hSEhDXcRg/p1s/CLwSr7KkEecjruBNfr+wFjuxH4sS9hzb8bUOPh14Ll5jFf7gEs7ge02wOPub2Jbz97GjCfgyjqTjIVwtKPUc3MbuXDuOa/386jLegifp8KAjiwK2qFSofA0+YzniSLqsDhy73pMrNyLObBjbiofpEHHulILjSmzADyzE72Go/O0PXxDnfgt7S8Gf8vo8Ruy+id3FLrxNgRaVejJXXcCJJtS8BUfxDQtKM67Ap7MbNWFHFzuZjv9pqU5cIwcfwDEsy51Gxs/wNMdxzWLczzb3rItxlXE8JGdxo3LszHhTn6BtgSveumzBXc9iiOh8Typtg4/jYjA6M+4UQ8VvG/xPrLPgSoUjLfUoxBWM6IZd4hrFdYqHZ6IXHOODCMkvbbmBvMe5ugbSpB839hn0s9c48CDHWfCgCrU2PwUmm38f0F6C8AAAAABJRU5ErkJggg=="
+                />
+                <h3 class="text-center">Accessories HP</h3>
+                <hr class="mx-auto w-75" />
+                <p>Antigores, Casing, Kabel Data (type D/C & iPhone) earphone (kabel & bluetooth), power bank (kabel & wireless) dll</p>
+              </div>
+            </div>
+            <!-- card ends here -->
+          </div>
+          <!-- col ends here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Product section-->
+    <section id="product" style="background-color: #fdfdfd">
+      <div class="container-fluid py-5 text-center">
+        <h2>Our Products</h2>
+        <hr class="mx-auto mb-5 w-25 text-center" />
+
+        <!-- tabs -->
+        <div class="filter_buttons align-item-center">
+          <button class="active" onclick="showTab('all')">All</button>
+          <button onclick="showTab('iphone')">iPhone</button>
+          <button onclick="showTab('android')">Android</button>
+        </div>
+
+        <!-- card product-->
+        <div id="all" class="tab-content">
+          <!-- Include all product cards here -->
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product mh-100 text-black" data-name="iphone">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/ibox/12_pro.png" class="crop card-img-top" alt="Apple iPhone" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">iPhone 12</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Mini</span><span>IDR 4.500.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro</span><span>IDR 11.999.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro Max</span><span>IDR 11.500.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 9.000.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="iphone">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/ibox/IP_13.webp?rand=1695287682" class="crop card-img-top" alt="Apple iPhone" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">iPhone 13</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Mini</span><span>IDR 10.500.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro</span><span>IDR 13.000.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro Max</span><span>IDR 14.000.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 12.000.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="iphone">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/ibox/IP_14.webp?rand=1695287682" class="crop card-img-top" alt="Apple Computer" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">iPhone 14</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Mini</span><span>- Tidak Ada -</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro</span><span>IDR 16.599.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro Max</span><span>IDR 18.000.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 13.499.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="android">
+              <img src="https://i02.appmifile.com/33_item_id/21/09/2023/e1733ba627f7733108aa2c7160b1666a.png?thumb=1&w=750&h=500&width=750&height=500" class="crop card-img-top" alt="Apple Computer" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">Xiaomi 13T</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Mini</span><span>- Tidak Ada -</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro</span><span>IDR 16.599.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro Max</span><span>IDR 18.000.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 13.499.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="android">
+              <img src="https://i02.appmifile.com/60_item_id/16/06/2023/dd532e5676ad5e866911eebf9107dd0b.png?thumb=1&w=606&h=404&width=606&height=404" class="crop card-img-top" alt="Apple Computer" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">Poco F5</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>X5 Pro</span><span>IDR 3.799.000</span></div>
+                  <div class="d-flex justify-content-between"><span>X5</span><span>IDR 2.999.000</span></div>
+                  <div class="d-flex justify-content-between"><span>M5</span><span>IDR 1.399.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 4.999.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="android">
+              <img src="https://i02.appmifile.com/148_item_id/30/05/2023/6203a7e925c8110dbd5e99c86f9802ef.png?thumb=1&w=606&h=404&width=606&height=404" class="crop card-img-top" alt="Apple Computer" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">Redmi Note 12 Pro</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Note 12</span><span>IDR 3.199.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Note 11 Pro</span><span>IDR 3.249.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Note 11</span><span>IDR 1.999.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 4.199.000</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="iphone" class="tab-content">
+          <!-- Include iPhone product cards here -->
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product mh-100 text-black" data-name="iphone">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/ibox/12_pro.png" class="crop card-img-top" alt="Apple iPhone" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">iPhone 12</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Mini</span><span>IDR 4.500.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro</span><span>IDR 11.999.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro Max</span><span>IDR 11.500.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 9.000.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="iphone">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/ibox/IP_13.webp?rand=1695287682" class="crop card-img-top" alt="Apple iPhone" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">iPhone 13</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Mini</span><span>IDR 10.500.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro</span><span>IDR 13.000.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro Max</span><span>IDR 14.000.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 12.000.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="iphone">
+              <img src="https://cdn.eraspace.com/pub/media/wysiwyg/ibox/IP_14.webp?rand=1695287682" class="crop card-img-top" alt="Apple Computer" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">iPhone 14</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Mini</span><span>- Tidak Ada -</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro</span><span>IDR 16.599.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro Max</span><span>IDR 18.000.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 13.499.000</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="android" class="tab-content">
+          <!-- Include Android product cards here -->
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="android">
+              <img src="https://i02.appmifile.com/33_item_id/21/09/2023/e1733ba627f7733108aa2c7160b1666a.png?thumb=1&w=750&h=500&width=750&height=500" class="crop card-img-top" alt="Apple Computer" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">Xiaomi 13T</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Mini</span><span>- Tidak Ada -</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro</span><span>IDR 16.599.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Pro Max</span><span>IDR 18.000.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 13.499.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="android">
+              <img src="https://i02.appmifile.com/60_item_id/16/06/2023/dd532e5676ad5e866911eebf9107dd0b.png?thumb=1&w=606&h=404&width=606&height=404" class="crop card-img-top" alt="Apple Computer" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">Poco F5</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>X5 Pro</span><span>IDR 3.799.000</span></div>
+                  <div class="d-flex justify-content-between"><span>X5</span><span>IDR 2.999.000</span></div>
+                  <div class="d-flex justify-content-between"><span>M5</span><span>IDR 1.399.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 4.999.000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+            <div class="card-product text-black" data-name="android">
+              <img src="https://i02.appmifile.com/148_item_id/30/05/2023/6203a7e925c8110dbd5e99c86f9802ef.png?thumb=1&w=606&h=404&width=606&height=404" class="crop card-img-top" alt="Apple Computer" />
+              <div class="card-body">
+                <div class="text-center">
+                  <h5 class="card-title">Believing is seeing</h5>
+                  <p class="text-muted mb-4">Redmi Note 12 Pro</p>
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between"><span>Note 12</span><span>IDR 3.199.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Note 11 Pro</span><span>IDR 3.249.000</span></div>
+                  <div class="d-flex justify-content-between"><span>Note 11</span><span>IDR 1.999.000</span></div>
+                </div>
+                <div class="d-flex justify-content-between total font-weight-bold mt-4"><span>Harga</span><span>IDR 4.199.000</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      var products = [
+        {
+          category: 'iphone',
+          name: 'Believing is seeing',
+          image: 'https://cdn.eraspace.com/pub/media/wysiwyg/ibox/12_pro.png',
+          description: 'iPhone 12',
+          prices: {
+            Mini: ' IDR 4.500.000',
+            Pro: ' IDR 11.999.000',
+            'Pro Max': ' IDR 11.500.000',
+          },
+          total: 'IDR 9.000.000',
+        },
+        // Add more products as needed
+        {
+          category: 'iphone',
+          name: 'Believing is seeing',
+          image: 'https://cdn.eraspace.com/pub/media/wysiwyg/ibox/IP_13.webp?rand=1695287682',
+          description: 'iPhone 13',
+          prices: {
+            Mini: ' IDR 10.500.000',
+            Pro: ' IDR 13.000.000',
+            'Pro Max': ' IDR 14.000.000',
+          },
+          total: 'IDR 12.000.000',
+        },
+        {
+          category: 'iphone',
+          name: 'Believing is seeing',
+          image: 'https://cdn.eraspace.com/pub/media/wysiwyg/ibox/IP_14.webp?rand=1695287682',
+          description: 'iPhone 14',
+          prices: {
+            Mini: ' Tidak ada',
+            Pro: ' IDR 16.599.000',
+            'Pro Max': ' IDR 18.000.000',
+          },
+          total: 'IDR 13.499.000',
+        },
+        {
+          category: 'android',
+          name: 'Believing is seeing',
+          image: 'https://i02.appmifile.com/33_item_id/21/09/2023/e1733ba627f7733108aa2c7160b1666a.png?thumb=1&w=750&h=500&width=750&height=500',
+          description: 'Xiaomi 13T',
+          prices: {
+            Biasa: ' IDR 5.600.000',
+            Pro: ' IDR 7.499.000',
+            '12T': ' IDR 4.999.000',
+          },
+          total: 'IDR 6.499.000',
+        },
+        {
+          category: 'android',
+          name: 'Believing is seeing',
+          image: 'https://i02.appmifile.com/60_item_id/16/06/2023/dd532e5676ad5e866911eebf9107dd0b.png?thumb=1&w=606&h=404&width=606&height=404',
+          description: 'Poco F5',
+          prices: {
+            M5: ' IDR 1.399.000',
+            X5: ' IDR 2.999.000',
+            'X5 Pro': ' IDR 3.799.000',
+          },
+          total: 'IDR 4.999.000',
+        },
+        {
+          category: 'android',
+          name: 'Believing is seeing',
+          image: 'https://i02.appmifile.com/148_item_id/30/05/2023/6203a7e925c8110dbd5e99c86f9802ef.png?thumb=1&w=606&h=404&width=606&height=404',
+          description: 'Redmi Note 12 Pro',
+          prices: {
+            Note12: ' IDR 3.199.000',
+            Note11Pro: ' IDR 3.249.000',
+            'Note 11': ' IDR 1.999.000',
+          },
+          total: 'IDR 4.199.000',
+        },
+      ];
+
+      function generateProductCards(category) {
+        var tabContent = document.getElementById(category);
+        tabContent.innerHTML = ''; // Clear existing content
+
+        products.forEach(function (product) {
+          if (product.category === category || category === 'all') {
+            var cardHtml = `
+              <div class="col-md-8 col-lg-6 col-xl-4 py-5">
+                <div class="card-product mh-100 text-black" data-name="${category}">
+                  <img src="${product.image}" class="crop card-img-top" alt="${product.description}" />
+                  <div class="card-body">
+                    <div class="text-center">
+                      <h5 class="card-title">${product.name}</h5>
+                      <p class="text-muted mb-4">${product.description}</p>
+                    </div>
+                    <div>
+                      ${Object.entries(product.prices)
+                        .map(([type, price]) => `<div class="d-flex justify-content-between"><span>${type}</span><span>${price}</span></div>`)
+                        .join('')}
+                    </div>
+                    <div class="d-flex justify-content-between total font-weight-bold mt-4">
+                      <span>Harga</span>
+                      <span>${product.total}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+
+            tabContent.insertAdjacentHTML('beforeend', cardHtml);
+          }
+        });
+      }
+
+      
+      function showTab(category) {
+        var i, tabContent;
+        tabContent = document.getElementsByClassName('tab-content');
+        for (i = 0; i < tabContent.length; i++) {
+          tabContent[i].style.display = 'none';
+        }
+        document.getElementById(category).style.display = 'flex';
+
+        // Generate product cards for the selected category
+        generateProductCards(category);
+      }
+
+      // Initially show 'all' tab
+      showTab('all');
+    </script>
+
+    
+
+    <!-- FAQ section-->
+    <section id="faq" class="faq">
+    <div class="container-lg">
+      <div class="section-header py-5 text-center">
+        <h2 class="page-title text-center" style="text-align: center;">Frequently Ask & <strong>Question<strong></h2>
+        <hr class="mx-auto mb-5 w-25 text-center" />
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="accordion" id="accordionExample">
+            <div class="card-faq">
+              <div class="card-header" id="headingOne">
+                <h2 class="clearfix mb-0">
+                  <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="fa fa-chevron-circle-down"></i> Bagaimana proses transaksinya?</a>									
+                </h2>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">Transaksi pembelian dan penjualan HP baru atau second dilakukan jika sudah ada deal dari kedua belah pihak.</div>
+              </div>
+            </div>
+            <div class="card-faq">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-chevron-circle-down"></i> Bagaimana dengan kondisi HP secondnya?</a>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">Kondisi HP second saat dalam penjualan, kami lakukan pengecekan kembali kondisi baik sistem maupun fisik luar sehingga HP second yang kami jual itu kondisi yang bagus punya ya.</div>
+              </div>
+            </div>
+            <div class="card-faq">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-chevron-circle-down"></i> Apakah garansi HP nya resmi?</a>                     
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">Kami tidak pernah menjual atau menerima pembelian HP dari black market ataupun asal usul yang tidak jelas, jadi semua yang ada di toko kami baik HP baru maupun second nya garansi resmi dari masing-masing brand nya ya.</div>
+              </div>
+            </div>
+            <div class="card-faq">
+              <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                  <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i> Apakah HP baru atau secondnya asli?</a>                               
+                </h2>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">Semua HP baru atau secondnya kami jual dengan asli ya kakak memiliki IMEI juga, karena kalo HP black market itu tidak ada IMEI nya.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Testimoni-->
+    <section id="testimoni">
+      <div class="container-fluid py-5 text-center">
+        <h2>Testimonial</h2>
+        <hr class="mx-auto mb-5 w-25 text-center" />
+        <p>Apa kata orang tentang kami?</p>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12">
+            <div class="text-center mb-4 pb-2">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAjFJREFUSEvt1UuoT1EUBvDflSIyETPChIm8YqAoeUYpKcqj5F0iREgeeUceyUB5TzwGyCskjxJGkpJSQjERA5KEgbTq3Nu+5/7v3ac7cAfunp2zv299a317rb3rtNGqayNd7cL/zPkqVgdmBMZgBnbgWoUMO2EkZmIihuNrPS8n3APnMT4ROoC1GeFhuIS+CW4qblQR3op16JKQf2J3UXUt7W44XlSZFvURC3EzJ7wBe0qRz2A9PjVTbYeiosnJ/g/swn78Tnm1rB6Le6Uqx+FJxt5t2JJg3mAUotomqyzcFa/QK0EuwsmM6FA8RVQd6xeGFLFqUsvCZYsfF1nnmvg2JiWgndjcEqks/B69E8ItXMdDvGwmUHTuu9LeUTzC/SpW98PbFrJ8gZV4UMLMx6kWeFewphw7rXg2zuY8xTRcTXDHsDjD+4aB+FBrnDa1MJ9p3C8YgM/Fz7uIrs+tsH50LeGDWJ1jF/tLiosiPp8hurrK6o/XAUytPoLlVdg4hzkFNs4+bKyyGhJOhbfnRiCJHL0wt/iOjm+wMKMevXCiXPEE3KmSNvYV12fA40rcWJE3BTGijayO6mMe+1QIEmf6vMAFPni5ly6aMWY+7u8m4Om4mAkS47O0lNwhrMokPAsXanV1/b9omjiHzjUC7S1s/VPai2oPY0UNznfMw+V0rzl7umMZBqNn8TLFO1u+Gss6Md8LMAgdi/M8jZj9Rit3LhWOu3WQduHW+dYK1v9n9V92B2Ef9hGQCAAAAABJRU5ErkJggg=="/>
+            </div>
+
+            <div class="card-testi shadow-lg">
+              <div class="card-body px-4 py-5">
+                <!-- Carousel wrapper -->
+                <div id="carouselDarkVariant" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                  <!-- Indicators -->
+                  <div class="carousel-indicators mb-0">
+                    <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="1" aria-label="Slide 1"></button>
+                    <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="2" aria-label="Slide 1"></button>
+                    <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="3" aria-label="Slide 1"></button>
+                  </div>
+
+                  <!-- Inner -->
+                  <div class="carousel-inner">
+                    <!-- Single item -->
+                    <div class="carousel-item active">
+                      <div class="row d-flex justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
+                          <div class="row">
+                            <div class="col-lg-4 d-flex justify-content-center">
+                              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="rounded-circle shadow-1 mb-4 mb-lg-0" alt="woman avatar" width="150" height="150" />
+                            </div>
+                            <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
+                              <h4 class="mb-4">Maria - Pembeli iPhone Second</h4>
+                              <p class="mb-0 pb-3">iPhone nya seperti baru, mantap!</p>
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Single item -->
+                    <div class="carousel-item">
+                      <div class="row d-flex justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
+                          <div class="row">
+                            <div class="col-lg-4 d-flex justify-content-center">
+                              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" class="rounded-circle shadow-1 mb-4 mb-lg-0" alt="woman avatar" width="150" height="150" />
+                            </div>
+                            <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
+                              <h4 class="mb-4">Lisa - Pembeli Android baru</h4>
+                              <p class="mb-0 pb-3">Mantap! dilayani dan dibantu sampai transaksi selesai.</p>
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Single item -->
+                    <div class="carousel-item">
+                      <div class="row d-flex justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
+                          <div class="row">
+                            <div class="col-lg-4 d-flex justify-content-center">
+                              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" class="rounded-circle shadow-1 mb-4 mb-lg-0" alt="woman avatar" width="150" height="150" />
+                            </div>
+                            <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
+                              <h4 class="mb-4">Risa - Pembeli via CoD iPhone second</h4>
+                              <p class="mb-0 pb-3">Mantap! CoD area Cirebon kota ketemu langsung deal karena kondisi HP Secondnya masih mulus</p>
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Single item -->
+                    <div class="carousel-item">
+                      <div class="row d-flex justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
+                          <div class="row">
+                            <div class="col-lg-4 d-flex justify-content-center">
+                              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" class="rounded-circle shadow-1 mb-4 mb-lg-0" alt="woman avatar" width="150" height="150" />
+                            </div>
+                            <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
+                              <h4 class="mb-4">John - Tukar Tambah ke iPhone</h4>
+                              <p class="mb-0 pb-3">Pelayanannya bagus!</p>
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfdJREFUSEvF1surT1EUwPHPLcUAAwPkMSRmRmaeUZSS4makKCkzj4n/QHnOlDxioDwykMfE4OYxMFMmyEReUQYiUopW7V+djnN+5+z9u9xVv8757bPW+q699t5rrzFTJGNTxDUKeHMK+l5J8KXgVXiQgPH+KBdeCr6LwYzvYMv/AC/FiwroN5bXxjrjKJnxJeyqeb6IPZ20ikIueAFeY1oN8gsL8akvPBd8HIdanB/FkX8BnoV3iGeTfMU8/OgDr894BZaltEVaI33xXJSe0zuc/sR7vMGHFGgEG7/YkE8H9lXwOK72iXYEnR24EfZV8CYUVaGegcSxW4OHdXD834krtYB6+h2qFkuwHbebUj0Ym2x4bLqoco+robUdp8mCf8Y6PKvnY9g5HhUeO3s9XjUtQlcBKYUHbHU6Uo2L3wWO0hhrNCNzh53CwWE2XeCVeJIJDfXn6cZqNe0CR9QnCsBhshhv22y7wDexrRC8H2dKwR8xt8X4Wxqf2fL9FraWgJfgZYvhRKUZuIy1DXrfMQdRtf6SYamOjuJ8zSJ2+GGcrY3vw7GGK3Mj7ueCL2B3xSgcRDBRGJokNlPYbKh8PNnWOAyb8TXENfYFBxB9VR+JYE9jNq4jrtusVM/H3jSLuMhzJBqHyM651BhkgXNA2bpd5zjbYV+DPxHcUh/74W2iAAAAAElFTkSuQmCC"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Inner -->
+
+                  <!-- Controls -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselDarkVariant" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselDarkVariant" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+                <!-- Carousel wrapper -->
+              </div>
+            </div>
+            <div class="text-center mt-4 pt-2">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAjRJREFUSEvt1kuojlEUBuDnpBC5JpRCUQoTYSK5RJEilzJEJkIxwAlFbkVCJmTiUiYkSRKJ3KIIA6KYYaAMmCgyQEvfr+3rO/+3/coxOGv27f2u9f7r3e9e+2/TSdHWSby6iP+Z8v+d1AOxAvPwFc9wAi9rJBmNlZiC93iKo/hQzqvqeGlB0ruC5BA2VKx3wz5srNj7UjRxNt0rE0eXJ2u6OoBNJcwpLG+S9w2LcbGBSYn74A361xB/xzC8K3CT8TDDla8xsop4IS5kFAjIHmwrsIexPjNvNm4ENu14dWGEnBq3MLMAxtmFL3JiB3b+DfFjTGqB+GDDgGnHY/E852fjEeJsI9bgSGbeL2OWXX0dszKKXMOcAtcPrzA4I28r9palju9w6wv0rSkSQ2FtgolBczmDOLxwroo41sbjDMY1KbQMp0v7i3AcA5rkDcfbjohjvTvC+qMQY3BdUiyGwSB8rCAYimkYgalYkGCeYGLjO+eR2JXc2ci7VCrYUYN3C/LGfozaGLk/o444ZI+rEwpERLcTiuHf7EhX4VgCCHnH4HMOcRjtdiF3A78du2tMNB1X0bPAxYidgTtpXlXH0V07tqBXAg7XzkcUqooh2I8wXhrxoMT9/S3KxHMRL00USSNmeBT81AFpjMLN6JHsx7HEeqVCZeLyQ3GzmErna+RNH4pQJP40xF0PJ1dGmTiuyT3E4I9BEvc5J5YgDHUfV/CgLqnO1XX5Le93Ebcs3Z8mdprUPwCSW18fSjpDXAAAAABJRU5ErkJggg=="/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact-->
+    <section id="contact" class="contact">
+      <div class="container-fluid py-5 text-start" data-aos="fade-up">
+
+        <div class="section-title text-center">
+          <h2>Contact Us</h2>
+          <hr class="mx-auto mb-5 w-25 text-center" />
+          <p>Hubungi Kami lebih lanjut</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info" style="float: left;">
+              <div class="address">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.4510906678543!2d108.5602691746249!3d-6.71467576564932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6ee37639d197b3%3A0xa8899daeae27f76c!2sSURYA%20TOSERBA%20CIREBON!5e0!3m2!1sen!2sid!4v1699950043446!5m2!1sen!2sid" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                
+                <h4><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAmdJREFUSEvl1kvIj3kUB/DPm1wiRLKwQRolFiO3lVtkYYOxIBaM3GoWY4ZSNlgpEUXkEjZMI5csbJTcNiShXJIFjZkRRWw0mKKj89bj733+z/N/S29x6t/z/P7P73e+55zf91zadJG0dRGuzgIPw9I0+gget+pAZ4Gn4UKCTcfFbxK4B2ZgHuZgcHr5HGdwCufxvo73dUM9FicxvELpI8zHzSrwOsC/YAe6p7JXuIW7uR6DH9E/1++wBnubgVcBB+juVPAvfsWJEoULsQuD8nuc3VMG3gx4NG6gJ+5hJp5WhDCuIu45nv9hfCEynx0tA+6d4fwBTzABz/LkIqzCpFxfwz4cy3Xk+PX0PAwel0bUAl6CKAwhc5O18b4Na0u83o51+W1lGhPLMPSPxjNlHh/CzxnaIQVPj1aEenF6HtfzAn3SgNXNgCNE8Qs5nO8HENaHXMKUCuDLmJp7zmI2HhZ0RGn9VF6LHm/CxgbFW7Ah/wuyhCfN5C165YadmQXF/ZsROJXAxXtrFTjO/t5gZYfAxVDvRzD6OBZ0MtRR6X7CA7TfcYehLhrXzt7XGIAPyc665OqGl+iHrVhfl9XFttfO1FbSaTmCmCFByCt1gYN0weLJ+AcTESUzpKqAjMDVLCDRp6NffyHNSmaUvfvJ5HjOwt8VrB6JcxiKNxiFv1oFjv1BivYuE3X6N/xZ4sCyvM+B+X0FDpYZWtWd4lxHbTH67Z1sldFMoi32TZD/M39LO1NjHjeLYt1BINIlavvtiitpacosG32ia8Xoc/prjD6NDnwfU2bR6y4b6Ku4U/m9TjpVKunMho8LSIQfHFDhzgAAAABJRU5ErkJggg=="/> Lokasi:</h4>
+                  <p>Jl. Karanggetas No.72, Pekalangan, Kec. Pekalipan, Kota Cirebon, Jawa Barat 45118</p>
+
+              </div>
+
+              <div class="email">
+                
+                <h4><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAvBJREFUSEvF1m3InmMYB/DfRlZEMrVQorwuypfVvBTyQbQwRdOafBBZYWsUSVjzEhLzAfNB05Ip80G21RRJkZcsI8S8ZDZCI0mzvPRfx63rubru+76ex+o5Pt33df6P43+ex/k/jvOYYZpsxjTxmizxAZiP43BUbXonvsI7+KvvQfoSn4jbsRCHDwn+M17C/fhy3AbGER+MB7AUOW0f+xMPYSXyu9NGESedL+O08kyQF7EZH+ILHFhpPwMX4fL6Fpek/hL80MU8jPhUvIkjymlTnfrrMUc+AU/igsJ9V5rY0fbrIp6D93FMge/B3X1yXJjEfBC31P9PMA+/N2N0Ea/HlQW6q+6qzRuBJb2xrfilY2OP4ub6/hiWjSI+ve4vmFewYMhJz8NrtXY+Xu/ARYxv4CzsLS2k9PZZ+8RrcXWl5ST8B2wF7kMcl5PxUQnuPtzRRXwQfsKheKLENOxq+xLHP7V9GSLM47uIo8RXa+FiRMn7g/haPF2BksXP26m+Bs8UIIoeluZAmideXgJrbrIpuIjwg1pMXac3TLjjW6sM8n3WqK7TIu7KSlNwqYDdBYqyo/AJxCvwcAEOw289Uz2OOLF+LVA4HmkTX4XnCnAKPhtB3KzjLlgz1XPxcYEWIX1iwonz3L1VgGzi+RHEk1lagmfLIR3svTZxavpHzMY6xGF/2Au4At/jaPzTJs7/p3Ad/qji//Z/MqeB5CVLj3gcNw3itTtXgGnq+b4FFw52OIUNpGWmlZ6Dv5GXK5PKPut6JJLmxbW+CndOgTQuq3Fj+a7B9c04XcRH4t1q6sFmksgr1ddmVskMXqZP66EY1PLQE2chM9bbrUHgBnwzhj0DRPr8uYVL9zu7+vQE18mMPnuwARuxrUafiCaNP2WSXp/RZzCbJWuXYlfXZscNe4cg9xw1JoV9LLNZBsR7pzrsNUnSyW6r8TYtsMsy3mYYzLs77komPdBnqjwTx7YG+u0lyJRNLxuX6l5BpgKaNuJ/AXJrkB/L5iGHAAAAAElFTkSuQmCC"/> Jam Operasional:</h4>
+                  <p>Setiap hari: 9AM-20PM</p>
+
+              </div>
+
+              <div class="phone">
+                
+                <h4><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAwBJREFUSEvV1lvoZmMUBvDf5FROwxhyHpIxIuRYzkJOzY2ZJM1MMU43XKAoJblAKAnleCFEg0hClJyTEilKcj6fz8IIPVpbX7u9/3t/c/PPuvm+vfe71vM+633WWu8cs2RzZgnX/w54PrbD2vgIX+DvabI3DeNdcBqWY6sWyE94AQ/jdvwxtIkxwNvgMpzKf0fzK94rlru3QD7FGXh0JvAh4BNwFzbBl7gBj+DViaAbYn8cjAuxfm3oHNzYBz4T8LF4rByvwiX4fSCF21eqj6p1Z+PmLp8+4AV4HRvjPFw7dGat7xfgavyFw/B8278POEzD+HJcXE7r4kA8M1LB9+DkIrDnGOCk6Ul8jJ1KoTm3F5EAUXXOfciiizerApbigUmHLsY34Syci+trcf5fV//D+PAh1Pp+XKk7glw8BPwBIpLU6ue1uNlM47s1PhsJnsxtjnn4pfFpM14Pv+EtLJoIfD6uqeec3SkjQbPsJRyAvSfLsA2cNvhhdaHUZWPb1mZy1mfi1imA78eSUvezfYyT4qT6FezbCp7mcCW+LXUnK2OsUfdBJdB/fdqMN8DP+B6bdkRtdv9dMc9zLEpfC3d0lFrEeCh2KFKdwHn5LnYs4Gxg0tJQUla7TZx3GGUDqfP3SwtNq1wHX9fazfBnX6rzvlHw6dX+2sTnVpmFZZfdh5PqQ9N278SKycVddZwm8VqlZWes7gFI0KNL4VvWmkytI/ByPed3v3r39BBwvj9X0+YYPDGgoNTnHrXmbXxS/y/CFXgKR7Zj9PXqnEtaXgSWIT+tZR7fUu029fvGGOAm1Zkoh5RDyizXm6GxmKtQhsql5bcMd3ftuotxM9Iewjs4HrtWi4xaI75vWsE2wkrENzeWlGRY39uXqi7gZiRO+iRVuXOFUS51XyFXnB9qUQSUrhZ7sDaQsuy1NnDq7scKntEY1o8X2zT6lMSJ2Afp643lGFbhtpq/g5poA2+BvRDpz3RTjN9CJMXN9XYQbEw5TRVkTRYP3TLXJOYon1kD/gdu1ZofkgBspgAAAABJRU5ErkJggg=="/> WhatsApp:</h4>
+                  <p>+62 856-7728-168</p>
+
+              </div>
+
+              
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Footer-->
+    <footer id="footer" class="footer bg-dark text-white pt-5 pb-pb-4">
+      <div class="container text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Flash Cellular</h5>
+            <p>Kami akan selalu melayani kalian dengan senang hati dan berusaha memenuhi kebutuhan pelanggan</p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Services</h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none">Tukar Tambah</a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none">Jual Beli</a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none">CoD</a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none">Accessories HP</a>
+            </p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Products</h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none">iPhone</a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none">Android</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+              </svg>
+              Cirebon, Jawa Barat 45118, Indonesia
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                />
+              </svg>
+              +62856-7728-168
+            </p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="row align-item-center">
+          <div class="col-md-7 col-lg-8">
+            <p>
+              &copy; Copyright <strong><span>2023</span></strong
+              >. All Rights Reserved by
+              <a href="#" style="text-decoration: none">
+                <stong class="text-warning">Flash Cellular</stong>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                      <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                      /></svg
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                      /></svg
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                      <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" /></svg
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                      <path
+                        d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
+                      /></svg
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px"
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                      /></svg
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="main.js/tester.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>
